@@ -31,17 +31,17 @@ const EventForm = () => {
   const deleteAllEvents = e => {
     e.preventDefault()
     const result = window.confirm('本当に全てのイベントを削除してもいいですか?')
-    if(result) 
-    dispatch({
-      type: DELETE_ALL_EVENTS
-    })
+    if(result) {
+      dispatch({
+        type: DELETE_ALL_EVENTS
+      })
 
-    dispatch({
-      type: ADD_OPERATION_LOG,
-      description: '全てのイベントを削除しました。',
-      operatedAt: timeCurrentIso8601()
-    })
-    
+      dispatch({
+        type: ADD_OPERATION_LOG,
+        description: '全てのイベントを削除しました。',
+        operatedAt: timeCurrentIso8601()
+      })
+    }
   }
 
   const deleteAllOperationLogs = e => {
